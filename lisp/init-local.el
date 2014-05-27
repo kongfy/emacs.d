@@ -12,6 +12,7 @@
 (prefer-coding-system 'utf-8)
 
 (require 'init-yasnippet)
+(require 'init-tabbar)
 
 ;; end of init-local.el
 (provide 'init-local)
