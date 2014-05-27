@@ -5,7 +5,7 @@
 (setq-default c-default-style "bsd"
               c-basic-offset 4
               tab-width 4
-              indent-tabs-mode t)
+              indent-tabs-mode nil)
 
 ;; for codec
 (setq-default buffer-file-coding-system 'utf-8)
