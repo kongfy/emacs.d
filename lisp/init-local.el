@@ -18,6 +18,7 @@
 
 (require 'init-yasnippet)
 (require 'init-tabbar)
+(require 'init-cscope)
 
 ;; end of init-local.el
 (provide 'init-local)
