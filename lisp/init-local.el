@@ -17,6 +17,7 @@
 (define-key ac-menu-map "\C-p" 'ac-previous)
 
 (require 'init-yasnippet)
+(require 'init-python-complete)
 (require 'init-tabbar)
 (require 'init-cscope)
 
