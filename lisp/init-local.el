@@ -16,6 +16,10 @@
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
 
+;; auto-popup
+(setq-default ac-auto-start 2)
+(setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
+
 (require 'init-yasnippet)
 (require 'init-python-complete)
 (require 'init-tabbar)
