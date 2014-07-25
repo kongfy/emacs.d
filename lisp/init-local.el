@@ -16,8 +16,9 @@
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
 
-;; auto-popup
-(setq-default ac-auto-start 2)
+;; custom auto-complete settings
+(setq-default ac-auto-start 2) ;; auto pop-up
+(setq-default ac-auto-show-menu 0.2)
 (setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
 
 (require 'init-yasnippet)
