@@ -23,6 +23,7 @@
 
 (require 'init-yasnippet)
 (require 'init-python-complete)
+(require 'init-clang-complete)
 (require 'init-tabbar)
 (require 'init-cscope)
 
