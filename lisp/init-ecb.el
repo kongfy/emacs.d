@@ -3,7 +3,7 @@
 (require 'ecb)
 (setq ecb-auto-activate t)
 (setq ecb-tip-of-the-day nil)
-;; (setq ecb-examples-bufferinfo-buffer-name nil)
+(setq ecb-examples-bufferinfo-buffer-name nil)
 
 (defun my-ecb-active-or-deactive ()
   (interactive)
@@ -11,12 +11,6 @@
       (ecb-deactivate)
     (ecb-activate)))
 (global-set-key [f1] 'my-ecb-active-or-deactive)
-
-(global-set-key (kbd "C-c 1") 'ecb-goto-window-directories)
-(global-set-key (kbd "C-c 2") 'ecb-goto-window-sources)
-(global-set-key (kbd "C-c 3") 'ecb-goto-window-methods)
-(global-set-key (kbd "C-c 4") 'ecb-goto-window-history)
-(global-set-key (kbd "C-c e") 'ecb-goto-window-edit-last)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

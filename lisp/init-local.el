@@ -27,6 +27,7 @@
 (require 'init-tabbar)
 (require 'init-cscope)
 (require 'init-ecb)
+(require 'init-c-mode-path)
 
 ;; end of init-local.el
 (provide 'init-local)
