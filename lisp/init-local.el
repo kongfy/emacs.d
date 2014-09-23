@@ -26,6 +26,7 @@
 (require 'init-clang-complete)
 (require 'init-tabbar)
 (require 'init-cscope)
+(require 'init-ecb)
 
 ;; end of init-local.el
 (provide 'init-local)
