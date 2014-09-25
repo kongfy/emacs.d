@@ -18,7 +18,7 @@
 
 ;; custom auto-complete settings
 (setq-default ac-auto-start 2) ;; auto pop-up
-(setq-default ac-auto-show-menu 0.2)
+(setq-default ac-auto-show-menu 0.5)
 (setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
 
 (require 'init-yasnippet)
@@ -27,7 +27,7 @@
 (require 'init-tabbar)
 (require 'init-cscope)
 (require 'init-ecb)
-(require 'init-c-mode-path)
+(require 'init-flycheck-path)
 
 ;; end of init-local.el
 (provide 'init-local)
