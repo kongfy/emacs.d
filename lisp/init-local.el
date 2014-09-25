@@ -27,7 +27,7 @@
 (require 'init-tabbar)
 (require 'init-cscope)
 (require 'init-ecb)
-(require 'init-flycheck-path)
+(require 'init-custom-path)
 
 ;; end of init-local.el
 (provide 'init-local)
