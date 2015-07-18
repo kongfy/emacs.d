@@ -113,7 +113,7 @@ versions (see "Updates" above). If you still experience problems, go ahead and
 
 Thanks for purcell's config, I can customize my own emacs config much easier.
 
-Based on that, my config add some package for my personal working requirments. All of those changes can be found at `~/.emacs.d/lisp/init-local.el.`
+Based on that, my config add some package for my personal working requirments. All of these changes can be found at `~/.emacs.d/lisp/init-local.el`.
 
 Below are the packages and required system tools, happy hacking!
 
@@ -129,6 +129,8 @@ Below are the packages and required system tools, happy hacking!
 | ------------- | ------------- |
 | xcscope       | cscope |
 | auto-complete-clang | Clang |
+
+You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/init-custom-path.el`, If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
 
 ## Python environment
 | Package       | Requirement   |
