@@ -107,3 +107,34 @@ versions (see "Updates" above). If you still experience problems, go ahead and
 [sanityinc.com](http://www.sanityinc.com/)
 
 [@sanityinc](https://twitter.com/)
+
+***
+# Kongfy's Notes
+
+Thanks for purcell's config, I can customize my own emacs config much easier.
+
+Based on that, my config add some package for my personal working requirments. All of these changes can be found at `~/.emacs.d/lisp/init-local.el`.
+
+Below are the packages and required system tools, happy hacking!
+
+## General customization
+| Package       | Requirement   |
+| ------------- | ------------- |
+| yasnippe      | - |
+| tabbar        | - |
+| ecb           | - |
+
+## C/C++ environment
+| Package       | Requirement   |
+| ------------- | ------------- |
+| xcscope       | cscope |
+| auto-complete-clang | Clang |
+
+You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/init-custom-path.el`, If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
+
+## Python environment
+| Package       | Requirement   |
+| ------------- | ------------- |
+| anaconda-mode | pip |
+
+`pip` is used to download the required Python packages, if you don't have access to Internet, then you have to install `jedi` and `service_factory` manually, good luck!  
