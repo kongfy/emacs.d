@@ -1,11 +1,12 @@
 (require-package 'elisp-slime-nav)
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
+(add-hook 'emacs-lisp-mode-hook (lambda () (setq mode-name "ELisp")))
 
 (require-package 'lively)
 
 (setq-default initial-scratch-message
-              (concat ";; Happy hacking " (or user-login-name "") " - Emacs ♥ you!\n\n"))
+              (concat ";; Happy hacking " user-login-name " - Emacs ♥ you!\n\n"))
 
 
 
