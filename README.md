@@ -145,6 +145,21 @@ You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/
 ## Python environment
 | Package       | Requirement   |
 | ------------- | ------------- |
-| anaconda-mode | pip |
+| [anaconda-mode](https://github.com/proofit404/anaconda-mode) | pip |
 
 `pip` is used to download the required Python packages, if you don't have access to Internet, then you have to install `jedi` and `service_factory` manually, good luck!  
+
+###TODO
+anaconda-mode is broken on my mac(OS X 10.11.1)
+
+## Go environment
+| Package       | Requirement   |
+| ------------- | ------------- |
+| go-mode | godef |
+| go-eldoc | - |
+| go-autocomplete | gocode |
+| flymake-go | - |
+| [go-flymake](https://github.com/dougm/goflymake) | goflymake |
+
+
+You have to append your `GOPATH` to `PATH` in order to make everything work!

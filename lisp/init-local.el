@@ -1,5 +1,4 @@
 ;; general
-(add-to-list 'load-path "~/.emacs.d/plugins")
 (global-linum-mode t)
 
 (setq-default c-default-style "bsd"
@@ -23,6 +22,7 @@
 
 (require 'init-yasnippet)
 (require 'init-python-complete)
+(require 'init-go-complete)
 (require 'init-clang-complete)
 (require 'init-tabbar)
 (require 'init-cscope)
