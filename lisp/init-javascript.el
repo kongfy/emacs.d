@@ -1,6 +1,5 @@
 (maybe-require-package 'json-mode)
 (maybe-require-package 'js2-mode)
-(maybe-require-package 'ac-js2)
 (maybe-require-package 'coffee-mode)
 (require-package 'js-comint)
 
