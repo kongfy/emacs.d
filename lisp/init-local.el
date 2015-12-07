@@ -24,7 +24,7 @@
 
 ;; c/c++ environment
 (require 'init-clang-complete)
-(require 'init-cscope)
+(require 'init-ggtags)
 (require 'init-custom-path)
 
 ;; python environment
