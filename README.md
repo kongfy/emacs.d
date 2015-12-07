@@ -137,7 +137,7 @@ Below are the packages and required system tools, happy hacking!
 ## C/C++ environment
 | Package       | Requirement   |
 | ------------- | ------------- |
-| xcscope       | cscope |
+| ggtags        | global |
 | auto-complete-clang | Clang |
 
 You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/init-custom-path.el`, If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
