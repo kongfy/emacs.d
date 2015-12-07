@@ -11,4 +11,4 @@
 ;; 设置仅在打开python文件时打开
 (add-hook 'python-mode-hook 'python-key-binding)
 
-(provide 'init-python-complete)
+(provide 'init-jedi)

@@ -21,13 +21,21 @@
 (setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
 
 (require 'init-yasnippet)
-(require 'init-python-complete)
-(require 'init-go-complete)
+
+;; c/c++ environment
 (require 'init-clang-complete)
-(require 'init-tabbar)
 (require 'init-cscope)
-(require 'init-ecb)
 (require 'init-custom-path)
+
+;; python environment
+(require 'init-jedi)
+
+;; go environment
+(require 'init-go-mode)
+
+;; testing area, may be deleted one day
+(require 'init-ecb)
+(require 'init-tabbar)
 
 ;; end of init-local.el
 (provide 'init-local)
