@@ -131,7 +131,6 @@ Below are the packages and required system tools, happy hacking!
 | Package       | Requirement   |
 | ------------- | ------------- |
 | yasnippe      | - |
-| tabbar        | - |
 | ecb           | - |
 
 ## C/C++ environment
