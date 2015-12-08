@@ -21,11 +21,11 @@
 (setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
 
 (require 'init-yasnippet)
+(require 'init-projectile)
 
 ;; c/c++ environment
 (require 'init-clang-complete)
 (require 'init-ggtags)
-(require 'init-custom-path)
 
 ;; python environment
 (require 'init-jedi)
