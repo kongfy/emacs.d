@@ -147,9 +147,7 @@ You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/
 | ------------- | ------------- |
 | [jedi](https://github.com/tkf/emacs-jedi) | - |
 
-virtualenv tip:
-
-Put a .dir-locals.el in the project's root directory with something like:
+Tip for playing with virtualenv : Put a .dir-locals.el in the project's root directory with something like:
 
 ```el
 ((python-mode . ((python-shell-virtualenv-path . "/path/to/my/venv/"))))
