@@ -9,4 +9,8 @@
 
 (add-hook 'python-mode-hook 'python-key-binding)
 
+;; virtualenv tip:
+;; You MUST put a .dir-locals.el in the project's root directory with something like:
+;; ((python-mode . ((python-shell-virtualenv-path . "/path/to/my/venv/"))))
+
 (provide 'init-jedi)
