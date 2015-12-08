@@ -132,6 +132,7 @@ Below are the packages and required system tools, happy hacking!
 | ------------- | ------------- |
 | yasnippe      | - |
 | ecb           | - |
+| [projectile](https://github.com/bbatsov/projectile) | - |
 
 ## C/C++ environment
 | Package       | Requirement   |
@@ -144,7 +145,7 @@ You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/
 ## Python environment
 | Package       | Requirement   |
 | ------------- | ------------- |
-| [jedi](https://github.com/tkf/emacs-jedi) | |
+| [jedi](https://github.com/tkf/emacs-jedi) | - |
 
 virtualenv tip:
 
