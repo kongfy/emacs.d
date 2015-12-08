@@ -140,14 +140,35 @@ Below are the packages and required system tools, happy hacking!
 | ggtags        | global |
 | auto-complete-clang | Clang |
 
-You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/init-custom-path.el`, If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
+You should set `ac-clang-flags` and `flycheck-clang-include-path` properly first, you can do this by putting a `.dir-locals.el` in your C/C++ project's root directory. If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
+
+```el
+;;; Directory Local Variables
+;;; For more information see (info "(emacs) Directory Variables")
+
+((nil (eval .
+            (progn
+              (setq ac-clang-flags
+                    (mapcar (lambda (item)(concat "-I" item))
+                            (split-string
+                             "
+/path/to/include1/
+/path/to/include2/
+")))
+              (setq flycheck-clang-include-path
+                    (split-string
+                     "
+/path/to/include1/
+/path/to/include2/
+"))))))
+```
 
 ## Python environment
 | Package       | Requirement   |
 | ------------- | ------------- |
 | [jedi](https://github.com/tkf/emacs-jedi) | - |
 
-Tip for playing with virtualenv : Put a .dir-locals.el in the project's root directory with something like:
+Tip for playing with virtualenv : Put a `.dir-locals.el` in the project's root directory with something like:
 
 ```el
 ((python-mode . ((python-shell-virtualenv-path . "/path/to/my/venv/"))))
