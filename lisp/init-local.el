@@ -1,9 +1,8 @@
 ;; general
 (global-linum-mode t)
 
-(setq-default c-default-style "bsd"
-              c-basic-offset 4
-              tab-width 4
+;; personal choice
+(setq-default tab-width 4
               indent-tabs-mode nil)
 
 ;; for codec
@@ -11,7 +10,7 @@
 (prefer-coding-system 'utf-8)
 
 ;; override auto-complete key bindings
-(setq ac-use-menu-map t)
+(setq-default ac-use-menu-map t)
 (define-key ac-menu-map "\C-n" 'ac-next)
 (define-key ac-menu-map "\C-p" 'ac-previous)
 
@@ -24,6 +23,11 @@
 (require 'init-projectile)
 
 ;; c/c++ environment
+(defun c-mode-stype ()
+  (setq c-default-style "bsd")
+  (setq c-basic-offset 4))
+(add-hook 'c-mode-common-hook 'c-mode-stype)
+
 (require 'init-clang-complete)
 (require 'init-ggtags)
 
