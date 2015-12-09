@@ -130,7 +130,7 @@ Below are the packages and required system tools, happy hacking!
 ## General customization
 | Package       | Requirement   |
 | ------------- | ------------- |
-| yasnippe      | - |
+| yasnippet     | - |
 | ecb           | - |
 | [projectile](https://github.com/bbatsov/projectile) | - |
 
@@ -182,6 +182,5 @@ Tip for playing with virtualenv : Put a `.dir-locals.el` in the project's root d
 | go-autocomplete | gocode |
 | flymake-go | - |
 | [go-flymake](https://github.com/dougm/goflymake) | goflymake |
-
 
 You have to append your `GOPATH` to `PATH` in order to make everything work!
