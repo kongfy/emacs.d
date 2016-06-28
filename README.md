@@ -184,3 +184,9 @@ Tip for playing with virtualenv : Put a `.dir-locals.el` in the project's root d
 | [go-flymake](https://github.com/dougm/goflymake) | goflymake |
 
 You have to append your `GOPATH` to `PATH` in order to make everything work!
+
+## Tex environment
+| Package       | Requirement   |
+| ------------- | ------------- |
+| auctex | xelatex |
+| ac-math | - |

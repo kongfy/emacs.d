@@ -37,6 +37,9 @@
 ;; go environment
 (require 'init-go-mode)
 
+;; tex environment
+(require 'init-tex)
+
 ;; testing area, may be deleted one day
 (require 'init-ecb)
 
