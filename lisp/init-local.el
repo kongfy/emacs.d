@@ -19,14 +19,23 @@
 (setq-default ac-auto-show-menu 0.5)
 (setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
 
+;; indent guide mode, copy from purcell's recent update.
+;; TODO: remove after merge.
+(when (maybe-require-package 'indent-guide)
+  (add-hook 'prog-mode-hook 'indent-guide-mode)
+  (after-load 'indent-guide
+    (diminish 'indent-guide-mode))
+  (add-hook 'sanityinc/lispy-modes-hook
+            (lambda () (indent-guide-mode -1))))
+
 (require 'init-yasnippet)
 (require 'init-projectile)
 
 ;; c/c++ environment
-(defun c-mode-stype ()
+(defun c-mode-style ()
   (setq c-default-style "bsd")
   (setq c-basic-offset 4))
-(add-hook 'c-mode-common-hook 'c-mode-stype)
+(add-hook 'c-mode-common-hook 'c-mode-style)
 
 (require 'init-clang-complete)
 (require 'init-ggtags)
