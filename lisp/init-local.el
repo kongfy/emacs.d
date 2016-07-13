@@ -5,6 +5,9 @@
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
+(setq-default fci-rule-column 100)
+;; (setq-default fci-rule-color "darkblue")
+
 ;; for codec
 (setq-default buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
@@ -18,15 +21,6 @@
 (setq-default ac-auto-start 2) ;; auto pop-up
 (setq-default ac-auto-show-menu 0.5)
 (setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
-
-;; indent guide mode, copy from purcell's recent update.
-;; TODO: remove after merge.
-(when (maybe-require-package 'indent-guide)
-  (add-hook 'prog-mode-hook 'indent-guide-mode)
-  (after-load 'indent-guide
-    (diminish 'indent-guide-mode))
-  (add-hook 'sanityinc/lispy-modes-hook
-            (lambda () (indent-guide-mode -1))))
 
 (require 'init-yasnippet)
 (require 'init-projectile)
