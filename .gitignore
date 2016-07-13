@@ -41,3 +41,5 @@ site-lisp/package/
 /recentf
 /viper
 custom.el*
+.python-environments
+projectile-bookmarks.eld

@@ -130,27 +130,49 @@ Below are the packages and required system tools, happy hacking!
 ## General customization
 | Package       | Requirement   |
 | ------------- | ------------- |
-| yasnippe      | - |
-| tabbar        | - |
+| yasnippet     | - |
 | ecb           | - |
+| [projectile](https://github.com/bbatsov/projectile) | - |
 
 ## C/C++ environment
 | Package       | Requirement   |
 | ------------- | ------------- |
-| xcscope       | cscope |
+| ggtags        | global |
 | auto-complete-clang | Clang |
 
-You should edit the include path for `Clang` and `flycheck` in `~/.emacs.d/lisp/init-custom-path.el`, If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
+You should set `ac-clang-flags` and `flycheck-clang-include-path` properly first, you can do this by putting a `.dir-locals.el` in your C/C++ project's root directory. If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
+
+```el
+;;; Directory Local Variables
+;;; For more information see (info "(emacs) Directory Variables")
+
+((nil (eval .
+            (progn
+              (setq ac-clang-flags
+                    (mapcar (lambda (item)(concat "-I" item))
+                            (split-string
+                             "
+/path/to/include1/
+/path/to/include2/
+")))
+              (setq flycheck-clang-include-path
+                    (split-string
+                     "
+/path/to/include1/
+/path/to/include2/
+"))))))
+```
 
 ## Python environment
 | Package       | Requirement   |
 | ------------- | ------------- |
-| [anaconda-mode](https://github.com/proofit404/anaconda-mode) | pip |
+| [jedi](https://github.com/tkf/emacs-jedi) | - |
 
-`pip` is used to download the required Python packages, if you don't have access to Internet, then you have to install `jedi` and `service_factory` manually, good luck!  
+Tip for playing with virtualenv : Put a `.dir-locals.el` in the project's root directory with something like:
 
-###TODO
-anaconda-mode is broken on my mac(OS X 10.11.1)
+```el
+((python-mode . ((python-shell-virtualenv-path . "/path/to/my/venv/"))))
+```
 
 ## Go environment
 | Package       | Requirement   |
@@ -161,5 +183,10 @@ anaconda-mode is broken on my mac(OS X 10.11.1)
 | flymake-go | - |
 | [go-flymake](https://github.com/dougm/goflymake) | goflymake |
 
-
 You have to append your `GOPATH` to `PATH` in order to make everything work!
+
+## Tex environment
+| Package       | Requirement   |
+| ------------- | ------------- |
+| auctex | xelatex |
+| ac-math | - |

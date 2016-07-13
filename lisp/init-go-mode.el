@@ -23,4 +23,4 @@
   (local-set-key [f11] 'godef-jump))
 (add-hook 'go-mode-hook 'go-mode-setup)
 
-(provide 'init-go-complete)
+(provide 'init-go-mode)
