@@ -79,6 +79,8 @@
 (require 'init-git)
 (require 'init-github)
 
+(require 'init-projectile)
+
 (require 'init-compile)
 (require 'init-crontab)
 (require 'init-textile)
@@ -93,7 +95,8 @@
 (require 'init-css)
 (require 'init-haml)
 (require 'init-python-mode)
-(require 'init-haskell)
+(unless (version<= emacs-version "24.3")
+  (require 'init-haskell))
 (require 'init-elm)
 (require 'init-ruby-mode)
 (require 'init-rails)

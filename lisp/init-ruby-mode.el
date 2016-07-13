@@ -48,7 +48,9 @@
 (after-load 'ruby-mode
   (add-hook 'ruby-mode-hook 'robe-mode))
 (after-load 'company
-  (push 'company-robe company-backends))
+  (dolist (hook '(ruby-mode-hook inf-ruby-mode-hook html-erb-mode-hook haml-mode))
+    (add-hook hook
+              (lambda () (sanityinc/local-push-company-backend 'company-robe)))))
 
 
 
@@ -67,9 +69,16 @@
 
 
 
+(require-package 'goto-gem)
+
+
+(require-package 'bundler)
+
+
 ;;; YAML
 
-(require-package 'yaml-mode)
+(when (maybe-require-package 'yaml-mode)
+  (add-auto-mode 'yaml-mode "\\.yml\\.erb\\'"))
 
 
 
@@ -97,7 +106,7 @@
 
 (add-auto-mode 'html-erb-mode "\\.rhtml\\'" "\\.html\\.erb\\'")
 (add-to-list 'auto-mode-alist '("\\.jst\\.ejs\\'"  . html-erb-mode))
-(mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\'" 'erb)
+(mmm-add-mode-ext-class 'yaml-mode "\\.yaml\\(\\.erb\\)?\\'" 'erb)
 
 (dolist (mode (list 'js-mode 'js2-mode 'js3-mode))
   (mmm-add-mode-ext-class mode "\\.js\\.erb\\'" 'erb))

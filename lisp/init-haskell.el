@@ -15,7 +15,8 @@
 (when (maybe-require-package 'company-ghci)
   (after-load 'haskell-mode
     (after-load 'company
-      (push 'company-ghci company-backends))))
+      (add-hook 'haskell-mode-hook
+                (lambda () (sanityinc/local-push-company-backend 'company-ghci))))))
 
 
 
@@ -38,6 +39,10 @@
 
     (after-load 'haskell-mode
       (require 'flycheck-hdevtools))))
+
+(when (maybe-require-package 'intero)
+  (after-load 'haskell-mode
+    (add-hook 'haskell-mode-hook 'intero-mode)))
 
 
 

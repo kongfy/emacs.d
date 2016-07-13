@@ -23,17 +23,19 @@ config adds improved defaults and extended support for the following:
 * Erlang
 * Common Lisp (with Slime)
 
-In particular, there's a nice config for *tab autocompletion*, and
-`flycheck` is used to immediately highlight syntax errors in Ruby, HAML,
-Python, Javascript, PHP and a number of other languages.
+In particular, there's a nice config for *autocompletion* with
+[company](https://company-mode.github.io/), and
+[flycheck](http://www.flycheck.org) is used to immediately highlight
+syntax errors in Ruby, Python, Javascript, Haskell and a number of
+other languages.
 
 ## Supported Emacs versions
 
 The config should run on Emacs 23.3 or greater and is designed to
 degrade smoothly - see the Travis build - but note that Emacs 24 and
 above is required for an increasing number of key packages, including
-`magit` and `flycheck`, so to get full you should use the latest Emacs
-version available to you.
+`magit`, `company` and `flycheck`, so to get full you should use the
+latest Emacs version available to you.
 
 Some Windows users might need to follow
 [these instructions](http://xn--9dbdkw.se/diary/how_to_enable_GnuTLS_for_Emacs_24_on_Windows/index.en.html)
@@ -77,6 +79,11 @@ Update the config with `git pull`. You'll probably also want/need to update
 the third-party packages regularly too:
 
 <kbd>M-x package-list-packages</kbd>, then <kbd>U</kbd> followed by <kbd>x</kbd>.
+
+You should usually restart Emacs after pulling changes or updating
+packages so that they can take effect. Emacs should usually restore
+your working buffers when you restart due to this configuration's use
+of the `desktop` and `session` packages.
 
 ## Adding your own customization
 

@@ -2,6 +2,7 @@
 /.emacs.desktop
 /auto-save-list
 /.session
+/session.*
 /custom.el
 *.elc
 CVS
@@ -41,5 +42,5 @@ site-lisp/package/
 /recentf
 /viper
 custom.el*
-.python-environments
-projectile-bookmarks.eld
+/.python-environments
+/projectile-bookmarks.eld
