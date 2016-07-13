@@ -1,9 +1,8 @@
-(require-package 'auto-complete-clang)
+(require-package 'company-c-headers)
 
-(require 'auto-complete-clang)
-
-(defun ac-cc-mode-setup ()
-  (setq ac-sources (append '(ac-source-clang) ac-sources)))
-(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+(after-load 'company
+  (add-hook 'c-mode-common-hook
+            (lambda () (sanityinc/local-push-company-backend '(company-c-headers company-clang company-yasnippet))))
+  )
 
 (provide 'init-clang-complete)
