@@ -12,15 +12,6 @@
 (setq-default buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; override auto-complete key bindings
-(setq-default ac-use-menu-map t)
-(define-key ac-menu-map "\C-n" 'ac-next)
-(define-key ac-menu-map "\C-p" 'ac-previous)
-
-;; custom auto-complete settings
-(setq-default ac-auto-start 2) ;; auto pop-up
-(setq-default ac-auto-show-menu 0.5)
-(setq-default ac-dwim t) ;; To get pop-ups with docs even if a word is uniquely completed
 
 (require 'init-yasnippet)
 (require 'init-projectile)
@@ -31,17 +22,17 @@
   (setq c-basic-offset 4))
 (add-hook 'c-mode-common-hook 'c-mode-style)
 
-(require 'init-clang-complete)
+;; (require 'init-clang-complete)
 (require 'init-ggtags)
 
 ;; python environment
-(require 'init-jedi)
+;; (require 'init-jedi)
 
 ;; go environment
-(require 'init-go-mode)
+;; (require 'init-go-mode)
 
 ;; tex environment
-(require 'init-tex)
+;; (require 'init-tex)
 
 ;; testing area, may be deleted one day
 (require 'init-ecb)
