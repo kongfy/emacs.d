@@ -1,4 +1,5 @@
 (require-package 'jedi)
+(require-package 'company-jedi)
 
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
@@ -8,6 +9,11 @@
   (define-key python-mode-map [f12] 'jedi:goto-definition-pop-marker))
 
 (add-hook 'python-mode-hook 'python-key-binding)
+
+(after-load 'company
+  (add-hook 'python-mode-hook
+            (lambda () (sanityinc/local-push-company-backend '(company-jedi company-yasnippet))))
+  )
 
 ;; virtualenv tip:
 ;; You MUST put a .dir-locals.el in the project's root directory with something like:
