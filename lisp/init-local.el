@@ -12,6 +12,8 @@
 (setq-default buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+(setq-default company-async-timeout 30) ;; don't timeout. parsing ob is so slow.
+
 (require 'init-yasnippet)
 (require 'init-projectile)
 
