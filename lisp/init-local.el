@@ -27,13 +27,13 @@
 (require 'init-ggtags)
 
 ;; python environment
-;; (require 'init-jedi)
+(require 'init-jedi)
 
 ;; go environment
-;; (require 'init-go-mode)
+(require 'init-go-mode)
 
 ;; tex environment
-;; (require 'init-tex)
+(require 'init-tex)
 
 ;; testing area, may be deleted one day
 (require 'init-ecb)

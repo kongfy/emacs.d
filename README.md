@@ -128,9 +128,9 @@ versions (see "Updates" above). If you still experience problems, go ahead and
 ***
 # Kongfy's Notes
 
-Thanks for purcell's config, I can customize my own emacs config much easier.
+Thanks for purcell's great job, which help me to customize my own emacs config much easier.
 
-Based on that, my config add some package for my personal working requirments. All of these changes can be found at `~/.emacs.d/lisp/init-local.el`.
+Based on that, this config was added some packages for my personal working requirments. All of these changes could be found at `~/.emacs.d/lisp/init-local.el`.
 
 Below are the packages and required system tools, happy hacking!
 
@@ -139,15 +139,15 @@ Below are the packages and required system tools, happy hacking!
 | ------------- | ------------- |
 | yasnippet     | - |
 | ecb           | - |
-| [projectile](https://github.com/bbatsov/projectile) | - |
 
 ## C/C++ environment
 | Package       | Requirement   |
 | ------------- | ------------- |
 | ggtags        | global |
-| auto-complete-clang | Clang |
+| company-clang | Clang |
+| company-c-headers | |
 
-You should set `ac-clang-flags` and `flycheck-clang-include-path` properly first, you can do this by putting a `.dir-locals.el` in your C/C++ project's root directory. If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
+Every time before working on a new project, you get to set `company-clang-arguments`, `company-c-headers-path-system` and `flycheck-clang-include-path` properly first, one way to do this is putting a `.dir-locals.el` in your C/C++ project's root directory. If you don't know what pathes to use, searching list from `echo "" | g++ -v -x c++ -E -` might be a good start.
 
 ```el
 ;;; Directory Local Variables
@@ -155,13 +155,19 @@ You should set `ac-clang-flags` and `flycheck-clang-include-path` properly first
 
 ((nil (eval .
             (progn
-              (setq ac-clang-flags
-                    (mapcar (lambda (item)(concat "-I" item))
+              (setq company-clang-arguments
+                    (mapcar (lambda (item) (concat "-I" item))
                             (split-string
                              "
 /path/to/include1/
 /path/to/include2/
 ")))
+              (mapcar (lambda (item) (add-to-list 'company-c-headers-path-system item))
+                      (split-string
+                       "
+/path/to/include1/
+/path/to/include2/
+"))
               (setq flycheck-clang-include-path
                     (split-string
                      "
@@ -174,6 +180,7 @@ You should set `ac-clang-flags` and `flycheck-clang-include-path` properly first
 | Package       | Requirement   |
 | ------------- | ------------- |
 | [jedi](https://github.com/tkf/emacs-jedi) | - |
+| company-jedi | - |
 
 Tip for playing with virtualenv : Put a `.dir-locals.el` in the project's root directory with something like:
 
@@ -186,14 +193,13 @@ Tip for playing with virtualenv : Put a `.dir-locals.el` in the project's root d
 | ------------- | ------------- |
 | go-mode | godef |
 | go-eldoc | - |
-| go-autocomplete | gocode |
+| company-go | gocode |
 | flymake-go | - |
 | [go-flymake](https://github.com/dougm/goflymake) | goflymake |
 
-You have to append your `GOPATH` to `PATH` in order to make everything work!
+Don't forgot to append your `GOPATH` to `PATH` in order to make everything work!
 
 ## Tex environment
 | Package       | Requirement   |
 | ------------- | ------------- |
 | auctex | xelatex |
-| ac-math | - |

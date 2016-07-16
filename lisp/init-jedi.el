@@ -12,7 +12,7 @@
 
 (after-load 'company
   (add-hook 'python-mode-hook
-            (lambda () (sanityinc/local-push-company-backend '(company-jedi company-yasnippet))))
+            (lambda () (sanityinc/local-push-company-backend '(company-jedi company-yasnippet company-capf company-dabbrev-code))))
   )
 
 ;; virtualenv tip:

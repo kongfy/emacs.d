@@ -7,7 +7,6 @@
 
 
 (defun ccpp-key-binding ()
-  (define-key c-mode-base-map [f10] 'ggtags-find-reference)
   (define-key c-mode-base-map [f11] 'ggtags-find-definition)
   (define-key c-mode-base-map [f12] 'ggtags-prev-mark))
 
