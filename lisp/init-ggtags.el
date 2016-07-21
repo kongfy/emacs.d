@@ -7,8 +7,9 @@
 
 
 (defun ccpp-key-binding ()
-  (define-key c-mode-base-map [f11] 'ggtags-find-definition)
-  (define-key c-mode-base-map [f12] 'ggtags-prev-mark))
+  (define-key c-mode-base-map [f9] 'ggtags-view-tag-history)
+  (define-key c-mode-base-map [f11] 'ggtags-prev-mark)
+  (define-key c-mode-base-map [f12] 'ggtags-next-mark))
 
 (add-hook 'c-mode-common-hook 'ccpp-key-binding)
 
