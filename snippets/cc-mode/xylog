@@ -1,0 +1,3 @@
+#name : log debug
+# --
+XY_LOG_DEBUG(("msg", "$0"));

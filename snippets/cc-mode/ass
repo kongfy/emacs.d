@@ -1,0 +1,3 @@
+#name : cppunit_assert
+# --
+CPPUNIT_ASSERT(

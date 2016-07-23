@@ -1,0 +1,36 @@
+#include "xy_unittest.h"
+
+namespace xuanyuan
+{
+
+class ${1:Name}UnitTest : public CppUnit::TestFixture
+{
+    CPPUNIT_TEST_SUITE($1UnitTest);
+    CPPUNIT_TEST(TestAll);
+    CPPUNIT_TEST_SUITE_END();
+public:
+    $1UnitTest();
+    void TestAll();
+    void setUp();
+    void tearDown();
+};
+CPPUNIT_TEST_SUITE_REGISTRATION($1UnitTest);
+
+$1UnitTest::$1UnitTest()
+{
+}
+
+void $1UnitTest::setUp()
+{
+}
+
+void $1UnitTest::tearDown()
+{
+}
+
+void $1UnitTest::TestAll()
+{
+}
+
+}
+XY_CPPUNIT_TEST_MAIN();

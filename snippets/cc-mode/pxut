@@ -1,0 +1,32 @@
+#include "px_unittest.h"
+
+class ${1:Name}_ut : public CppUnit::TestFixture
+{
+    CPPUNIT_TEST_SUITE($1_ut);
+    CPPUNIT_TEST(test1);
+    CPPUNIT_TEST_SUITE_END();
+public:
+    $1_ut();
+    void test1();
+    void setUp();
+    void tearDown();
+};
+CPPUNIT_TEST_SUITE_REGISTRATION($1_ut);
+
+$1_ut::$1_ut()
+{
+}
+
+void $1_ut::setUp()
+{
+}
+
+void $1_ut::tearDown()
+{
+}
+
+void $1_ut::test1()
+{
+}
+
+PX_UNIT_TEST_MAIN();

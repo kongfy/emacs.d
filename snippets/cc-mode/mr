@@ -1,0 +1,3 @@
+#name : register number monitor
+# --
+PerfMonitorManager::GetInstance()->RegisterNumberMonitor(MonitoringKey::PANGU_MASTER, PANGU_MASTER_$1, "", false, true);

@@ -1,0 +1,10 @@
+#name : struct ... { ... }
+# --
+struct ${1:Name}
+{
+  public:
+    // data members
+  public:
+    $1($2);
+    ~$1();
+};

@@ -1,0 +1,3 @@
+#name : log debug
+# --
+LOG_DEBUG(sLogger, ("msg", "$0"));

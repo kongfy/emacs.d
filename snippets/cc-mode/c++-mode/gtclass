@@ -1,0 +1,36 @@
+#name : gtest class ... { ... }
+# --
+class ${1:Name}: public ::testing::Test
+{
+  public:
+    $1($2);
+    virtual ~$1();
+    virtual void SetUp();
+    virtual void TearDown();
+  private:
+    // disallow copy
+    $1(const $1 &other);
+    $1& operator=(const $1 &other);
+  protected:
+    // data members
+};
+
+$1::$1($2)
+{
+}
+
+$1::~$1()
+{
+}
+
+void $1::SetUp()
+{
+}
+
+void $1::TearDown()
+{
+}
+
+TEST_F($1, basic_test)
+{
+}

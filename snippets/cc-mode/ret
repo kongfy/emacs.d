@@ -1,0 +1,5 @@
+#name : return ret
+# --
+int ret = OB_SUCCESS;
+$0
+return ret;

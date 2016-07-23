@@ -1,0 +1,6 @@
+#name : else if (...) { ... }
+# --
+else if (OB_SUCCESS != (ret = ${1:function}()))
+{
+  $0
+}
