@@ -1,6 +1,5 @@
 #name : if (...) { ... }
 # --
-if (OB_SUCCESS != (ret = ${1:function}()))
-{
+if (OB_SUCCESS != (ret = ${1:function}())) {
   $0
 }
