@@ -44,3 +44,4 @@ site-lisp/package/
 custom.el*
 /.python-environments
 /projectile-bookmarks.eld
+/anaconda-mode/
