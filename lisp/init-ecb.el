@@ -1,14 +1,16 @@
 (require-package 'ecb)
 
 (require 'ecb)
-(setq ecb-auto-activate t)
 (setq ecb-tip-of-the-day nil)
 (setq ecb-examples-bufferinfo-buffer-name nil)
 
 (defun my-ecb-active-or-deactive ()
   (interactive)
   (if ecb-minor-mode
-      (ecb-deactivate)
+      (progn
+        (ecb-deactivate)
+        (guide-key-mode 1))
+    (guide-key-mode -1)
     (ecb-activate)))
 (global-set-key [f1] 'my-ecb-active-or-deactive)
 
