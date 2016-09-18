@@ -1,5 +1,5 @@
 ;; general
-(global-linum-mode t)
+(global-nlinum-mode t)
 (which-function-mode t)
 
 ;; personal choice
