@@ -1,8 +1,9 @@
 ;; general
-(global-linum-mode t)
+(global-nlinum-mode t)
+(which-function-mode t)
 
 ;; personal choice
-(setq-default tab-width 2
+(setq-default tab-width 4
               indent-tabs-mode nil)
 
 (setq-default fci-rule-column 100)
