@@ -4,13 +4,21 @@
                   ivy-count-format ""
                   projectile-completion-system 'ivy
                   ivy-initial-inputs-alist
-                  '((man . "^")
+                  '((counsel-M-x . "^")
+                    (man . "^")
                     (woman . "^")))
     ;; IDO-style directory navigation
     (define-key ivy-minibuffer-map (kbd "C-j") #'ivy-immediate-done)
     (define-key ivy-minibuffer-map (kbd "RET") #'ivy-alt-done)
     (when (maybe-require-package 'diminish)
       (diminish 'ivy-mode)))
+
+  (defun sanityinc/enable-ivy-flx-matching ()
+    "Make `ivy' matching work more like IDO."
+    (interactive)
+    (require-package 'flx)
+    (setq-default ivy-re-builders-alist
+                  '((t . ivy--regex-fuzzy))))
 
   (add-hook 'after-init-hook
             (lambda ()
