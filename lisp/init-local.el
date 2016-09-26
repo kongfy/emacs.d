@@ -15,8 +15,13 @@
 (require 'init-yasnippet)
 (require 'init-projectile)
 
-(require 'init-clang-complete)
+;; (require 'init-irony)
+;; (require 'init-clang-complete)
+
 (require 'init-ggtags)
+(require 'init-ggtags-complete)
+
+;; (require 'init-rtags)
 
 (require 'init-ob)
 
@@ -30,7 +35,8 @@
 ;; (require 'init-tex)
 
 ;; testing area, may be deleted one day
-(require 'init-ecb)
+;; (require 'init-ecb)
+(require 'init-imenu)
 
 ;; end of init-local.el
 (provide 'init-local)
