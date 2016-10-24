@@ -18,7 +18,7 @@
 
 (after-load 'company
   (add-hook 'c-mode-common-hook
-            (lambda () (sanityinc/local-push-company-backend '(company-irony-c-headers company-irony company-capf company-dabbrev-code))))
+            (lambda () (sanityinc/local-push-company-backend '(company-irony-c-headers company-irony company-yasnippet company-capf company-dabbrev-code))))
   )
 
 
