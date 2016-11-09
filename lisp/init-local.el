@@ -6,6 +6,8 @@
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
+(global-set-key (kbd "C-c h") 'highlight-symbol-at-point)
+
 ;; for codec
 (setq-default buffer-file-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
