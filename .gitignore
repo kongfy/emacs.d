@@ -1,6 +1,7 @@
 /url/cache
 /.emacs.desktop
 /auto-save-list
+/network-security.data
 /.session
 /session.*
 /custom.el
@@ -19,6 +20,7 @@ cookies
 /ac-comphist.dat
 \#*
 /elpa
+/elpa-*
 site-lisp/package/
 /swank
 /.mc-lists.el
@@ -45,3 +47,8 @@ custom.el*
 /.python-environments
 /projectile-bookmarks.eld
 /anaconda-mode/
+/.historian
+/.uptimes.el
+/rake.cache
+/plantuml.jar
+/magithub
