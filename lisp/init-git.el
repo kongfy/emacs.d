@@ -1,16 +1,15 @@
 ;; TODO: link commits from vc-log to magit-show-commit
 ;; TODO: smerge-mode
-(require-package 'git-blame)
+(require-package 'git-blamed)
 (require-package 'gitignore-mode)
 (require-package 'gitconfig-mode)
-(require-package 'git-messenger) ;; Though see also vc-annotate's "n" & "p" bindings
 (maybe-require-package 'git-timemachine)
 
 
 (when (maybe-require-package 'magit)
   (setq-default magit-diff-refine-hunk t)
 
-  ;; Hint: customize `magit-repo-dirs' so that you can use C-u M-F12 to
+  ;; Hint: customize `magit-repository-directories' so that you can use C-u M-F12 to
   ;; quickly open magit on any one of your projects.
   (global-set-key [(meta f12)] 'magit-status)
   (global-set-key (kbd "C-x g") 'magit-status)
@@ -35,7 +34,8 @@
 
 
 ;; Convenient binding for vc-git-grep
-(global-set-key (kbd "C-x v f") 'vc-git-grep)
+(after-load 'vc
+  (define-key vc-prefix-map (kbd "f") 'vc-git-grep))
 
 
 
@@ -63,6 +63,8 @@
              "^  \\([a-z\\-]+\\) +"
              (shell-command-to-string "git svn help") 1))))
 
+(autoload 'vc-git-root "vc-git")
+
 (defun git-svn (dir command)
   "Run a git svn subcommand in DIR."
   (interactive (list (read-directory-name "Directory: ")
@@ -72,8 +74,11 @@
     (compile (concat "git svn " command))))
 
 
-(require-package 'git-messenger)
-(global-set-key (kbd "C-x v p") #'git-messenger:popup-message)
+(maybe-require-package 'git-messenger)
+;; Though see also vc-annotate's "n" & "p" bindings
+(after-load 'vc
+  (setq git-messenger:show-detail t)
+  (define-key vc-prefix-map (kbd "p") #'git-messenger:popup-message))
 
 
 (provide 'init-git)

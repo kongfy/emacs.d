@@ -1,6 +1,6 @@
 (setq auto-mode-alist
       (append '(("SConstruct\\'" . python-mode)
-		("SConscript\\'" . python-mode))
+                ("SConscript\\'" . python-mode))
               auto-mode-alist))
 
 (require-package 'pip-requirements)
@@ -15,4 +15,4 @@
                 (lambda () (sanityinc/local-push-company-backend 'company-anaconda))))))
 
 
-(provide 'init-python-mode)
+(provide 'init-python)
