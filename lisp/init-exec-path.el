@@ -1,3 +1,7 @@
+;;; init-exec-path.el --- Set up exec-path to help Emacs find programs  -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
 (require-package 'exec-path-from-shell)
 
 (after-load 'exec-path-from-shell
@@ -6,6 +10,8 @@
 
 
 (when (memq window-system '(mac ns x))
+  (setq-default exec-path-from-shell-arguments nil)
   (exec-path-from-shell-initialize))
 
 (provide 'init-exec-path)
+;;; init-exec-path.el ends here
