@@ -1,4 +1,5 @@
 (require-package 'yasnippet)
+(require-package 'yasnippet-snippets)
 
 ;; enable yasnippet
 (require 'yasnippet)

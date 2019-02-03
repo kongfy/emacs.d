@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; Produce backtraces when errors occur
-(setq debug-on-error t)
+(setq debug-on-error nil)
 
 (let ((minver "24.4"))
   (when (version< emacs-version minver)
@@ -63,7 +63,7 @@
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
-(require 'init-flycheck)
+;; (require 'init-flycheck)
 
 (require 'init-recentf)
 (require 'init-smex)
@@ -126,7 +126,7 @@
 
 (require 'init-misc)
 
-(require 'init-folding)
+;; (require 'init-folding)
 (require 'init-dash)
 
 ;;(require 'init-twitter)

@@ -1,12 +1,10 @@
 ;; general
-(global-nlinum-mode t)
+;; (global-nlinum-mode t)
 (which-function-mode t)
 
 ;; personal choice
 (setq-default tab-width 4
               indent-tabs-mode nil)
-
-(global-set-key (kbd "C-c h") 'highlight-symbol-at-point)
 
 ;; for codec
 (setq-default buffer-file-coding-system 'utf-8)
@@ -15,20 +13,16 @@
 ;; (setq-default company-async-timeout 30) ;; don't timeout. parsing ob is so slow.
 
 (require 'init-yasnippet)
-(require 'init-projectile)
 
 ;; (require 'init-irony)
 ;; (require 'init-clang-complete)
 
 (require 'init-ggtags)
-(require 'init-ggtags-complete)
+(require 'init-c-complete)
 
 ;; (require 'init-rtags)
 
 (require 'init-ob)
-
-;; python environment
-(require 'init-jedi)
 
 ;; go environment
 ;; (require 'init-go-mode)
