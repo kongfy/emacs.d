@@ -6,8 +6,8 @@
 
 ;;; Code:
 
-;; Produce backtraces when errors occur
-(setq debug-on-error nil)
+;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+;;(setq debug-on-error t)
 
 (let ((minver "24.4"))
   (when (version< emacs-version minver)
@@ -50,7 +50,7 @@
 ;;----------------------------------------------------------------------------
 
 (require-package 'diminish)
-(require-package 'scratch)
+(maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
 (require 'init-frame-hooks)
@@ -148,6 +148,8 @@
   (setq-default uptimes-keep-count 200)
   (add-hook 'after-init-hook (lambda () (require 'uptimes))))
 
+(when (fboundp 'global-eldoc-mode)
+  (add-hook 'after-init-hook 'global-eldoc-mode))
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient

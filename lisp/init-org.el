@@ -1,5 +1,25 @@
 ;;; init-org.el --- Org-mode config -*- lexical-binding: t -*-
 ;;; Commentary:
+
+;; Among settings for many aspects of `org-mode', this code includes
+;; an opinionated setup for the Getting Things Done (GTD) system based
+;; around the Org Agenda.  I have an "inbox.org" file with a header
+;; including
+
+;;     #+CATEGORY: Inbox
+;;     #+FILETAGS: INBOX
+
+;; and then set this file as `org-default-notes-file'.  Captured org
+;; items will then go into this file with the file-level tag, and can
+;; be refiled to other locations as necessary.
+
+;; Those other locations are generally other org files, which should
+;; be added to `org-agenda-files-list' (along with "inbox.org" org).
+;; With that done, there's then an agenda view, accessible via the
+;; `org-agenda' command, which gives a convenient overview.
+;; `org-todo-keywords' is customised here to provide corresponding
+;; TODO states, which should make sense to GTD adherents.
+
 ;;; Code:
 
 (when *is-a-mac*
@@ -9,6 +29,16 @@
 
 (define-key global-map (kbd "C-c l") 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
+
+(defvar sanityinc/org-global-prefix-map (make-sparse-keymap)
+  "A keymap for handy global access to org helpers, particularly clocking.")
+
+(define-key sanityinc/org-global-prefix-map (kbd "j") 'org-clock-jump-to-current-clock)
+(define-key sanityinc/org-global-prefix-map (kbd "l") 'org-clock-in-last)
+(define-key sanityinc/org-global-prefix-map (kbd "i") 'org-clock-in)
+(define-key sanityinc/org-global-prefix-map (kbd "o") 'org-clock-out)
+(define-key global-map (kbd "C-c o") sanityinc/org-global-prefix-map)
+
 
 ;; Various preferences
 (setq org-log-done t
@@ -84,10 +114,10 @@ typical word processor."
           (kill-local-variable 'buffer-face-mode-face))
         (buffer-face-mode 1)
         ;;(delete-selection-mode 1)
-        (set (make-local-variable 'blink-cursor-interval) 0.6)
-        (set (make-local-variable 'show-trailing-whitespace) nil)
-        (set (make-local-variable 'line-spacing) 0.2)
-        (set (make-local-variable 'electric-pair-mode) nil)
+        (setq-local blink-cursor-interval 0.6)
+        (setq-local show-trailing-whitespace nil)
+        (setq-local line-spacing 0.2)
+        (setq-local electric-pair-mode nil)
         (ignore-errors (flyspell-mode 1))
         (visual-line-mode 1))
     (kill-local-variable 'truncate-lines)
@@ -380,7 +410,7 @@ typical word processor."
      (ruby . t)
      (screen . nil)
      (,(if (locate-library "ob-sh") 'sh 'shell) . t)
-     (sql . nil)
+     (sql . t)
      (sqlite . t))))
 
 

@@ -52,3 +52,4 @@ custom.el*
 /magithub
 .cache/
 /forge-database.sqlite
+/transient
