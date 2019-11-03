@@ -1,25 +1,34 @@
-(require-package 'irony)
-(require-package 'company-irony)
-(require-package 'company-irony-c-headers)
+;;; init-irony.el --- C/C++ editing -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
+(when (maybe-require-package 'irony)
 
-;; replace the `completion-at-point' and `complete-symbol' bindings in
-;; irony-mode's buffers by irony-mode's function
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+  (add-hook 'c++-mode-hook 'irony-mode)
+  (add-hook 'c-mode-hook 'irony-mode)
+  (add-hook 'objc-mode-hook 'irony-mode)
 
-(after-load 'company
-  (add-hook 'c-mode-common-hook
-            (lambda () (sanityinc/local-push-company-backend '(company-irony-c-headers company-irony company-yasnippet company-capf company-dabbrev-code))))
-  )
+  (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
+  (defvar company-backends-irony nil)
+
+  (when (maybe-require-package 'company-irony)
+    (push 'company-irony company-backends-irony))
+
+  (when (maybe-require-package 'company-irony-c-headers)
+    (push 'company-irony-c-headers company-backends-irony))
+
+  (after-load 'yasnippet
+    (setq company-backends-irony (append company-backends-irony '(company-yasnippet))))
+
+  (after-load 'company
+    (add-hook 'irony-mode-hook
+              (lambda () (sanityinc/local-push-company-backend company-backends-irony))))
+
+  (when (maybe-require-package 'flycheck-irony)
+    (after-load 'irony
+      (after-load 'flycheck
+        (add-hook 'irony-mode-hook 'flycheck-irony-setup)))))
 
 (provide 'init-irony)
+;;; init-irony.el ends here
